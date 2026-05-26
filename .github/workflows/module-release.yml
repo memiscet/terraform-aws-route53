@@ -1,0 +1,20 @@
+name: Module Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      release_channel:
+        type: choice
+        options: [rc, ga]
+        default: rc
+
+jobs:
+  release:
+    uses: cpal/cpal-github-actions-iac-templates/.github/workflows/terraform-module-release.yml@v1
+    with:
+      terraform_working_directory: "."
+      release_channel: "${{ github.event.inputs.release_channel || 'rc' }}"
+    secrets: inherit

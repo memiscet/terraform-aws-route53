@@ -1,0 +1,19 @@
+name: Terraform Apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply:
+    uses: cpal/cpal-github-actions-iac-templates/.github/workflows/terraform-apply.yml@v1
+    with:
+      terraform_working_directory: "."
+      terraform_backend_bucket: ""
+      terraform_backend_key: ""
+      aws_account_id: "${{ vars.AWS_ACCOUNT_ID }}"
+      aws_region: "${{ vars.AWS_REGION || 'us-east-1' }}"
+      terraform_role_to_assume: "${{ vars.TERRAFORM_ROLE_TO_ASSUME }}"
+      environment_name: "stage"
+      site_role: "primary"
+      active_site: "primary"
+    secrets: inherit
