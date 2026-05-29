@@ -30,5 +30,5 @@ Reusable Terraform module for CPAL Route53 records and hosted zone patterns.
 ## Shared CI/CD Model
 
 - Wrapper workflows live in `.github/workflows/terraform-plan.yml` and `.github/workflows/terraform-apply.yml`.
-- Pipelines call reusable templates from `cpal/cpal-github-actions-iac-templates`.
+- Pipelines call reusable templates from `memiscet/cpal-github-actions-iac-templates`.
 - Governance checks (permission boundaries, DR/site validation, OIDC, security scan, docs) are enforced centrally.

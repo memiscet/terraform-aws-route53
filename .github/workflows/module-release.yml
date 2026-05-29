@@ -13,7 +13,7 @@ on:
 
 jobs:
   release:
-    uses: cpal/cpal-github-actions-iac-templates/.github/workflows/terraform-module-release.yml@v1
+    uses: memiscet/cpal-github-actions-iac-templates/.github/workflows/terraform-module-release.yml@v1
     with:
       terraform_working_directory: "."
       release_channel: "${{ github.event.inputs.release_channel || 'rc' }}"

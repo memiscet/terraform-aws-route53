@@ -6,7 +6,7 @@ on:
 
 jobs:
   plan:
-    uses: cpal/cpal-github-actions-iac-templates/.github/workflows/terraform-plan.yml@v1
+    uses: memiscet/cpal-github-actions-iac-templates/.github/workflows/terraform-plan.yml@v1
     with:
       terraform_working_directory: "."
       terraform_backend_bucket: ""
