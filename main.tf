@@ -11,9 +11,10 @@ locals {
 resource "aws_route53_record" "this" {
   count = local.record_enabled ? 1 : 0
 
-  zone_id = local.zone_id
-  name    = var.record_name
-  type    = "A"
+  zone_id         = local.zone_id
+  name            = var.record_name
+  type            = "A"
+  allow_overwrite = true
 
   alias {
     name                   = var.alb_dns_name
